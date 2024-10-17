@@ -35,19 +35,53 @@ Here is a sample structure of the CSV file that Duff Beer Inc. will upload to S3
 
 ---
 
-### **ETL Pipeline Challenge:**
+### **ETL Pipeline Challenge**:
+Your task is to set up an automated ETL pipeline to process Duff Beer Inc.'s order data. The pipeline should be fully serverless, utilizing AWS services to extract, transform, and load the data. Below are the steps and expectations:
 
-Using this CSV file, you should set up the automated ETL pipeline that processes this data.
+Data Ingestion:
 
-Ideally, you should use S3 to save the CSV.
+The pipeline begins when a CSV file containing order data is uploaded to an S3 bucket. This file serves as the input to your ETL process.
 
-Then, an event, somehow has to detect that the file is on s3 and needs to trigger the ETL process.
+Event Trigger:
 
-The process itself can be with step functions, and one or multiple lambda functions, or Glue Jobs (Serverless is encouraged)
+Set up an event notification that triggers an ETL process as soon as the CSV file is uploaded. This event should invoke AWS services to process the data.
 
-then the data must be saved in another s3 bucket and be available to query from ATHENA.
+ETL Process:
 
-Finally the API should expose the data previously saved and processed.
+The ETL process can be designed using:
+
+**AWS Step Functions**, which can orchestrate multiple tasks in a sequential or parallel flow.
+**Lambda Functions** for data processing and transformation (e.g., reading the CSV, aggregating data, and performing calculations).
+**AWS Glue Jobs**, if you opt for a more scalable ETL tool (Glue is optional but encouraged if appropriate for your solution).
+
+The ETL process should:
+
+Read the data from the CSV file.
+Perform necessary transformations, such as aggregating order information (e.g., calculating total sales per client).
+Save the transformed data in a separate S3 bucket for later querying.
+Data Storage & Querying:
+
+After the ETL process, the transformed data should be saved in a queryable format (e.g., Parquet or CSV) in an S3 bucket.
+Set up AWS Athena to query this processed data, enabling the retrieval of meaningful insights such as:
+Total orders per client
+Total sales per product
+Status of orders (e.g., delivered, broken, created)
+Expose the Data via an API:
+
+Create a REST API using API Gateway that allows users to query the processed data.
+The API should expose endpoints that can return specific reports based on the processed data, such as:
+Orders for a specific client
+Sales breakdown by product
+Order status reports
+Requirements & Best Practices:
+
+The entire solution should follow a serverless architecture, ensuring scalability and minimal operational overhead.
+Implement proper error handling and logging to ensure robustness, especially in the Lambda functions and API Gateway.
+Write clean and modular code that is easy to understand and maintain.
+Bonus Points:
+Implement additional data validation, such as checking for malformed CSV rows or missing data.
+Optimize the pipeline to handle large datasets efficiently (e.g., by using batch processing or partitioning in Athena).
+Provide cost-optimization suggestions, ensuring minimal resource usage for maximum efficiency.
 
 ### **Additional Task: Data Modeling:**
 
