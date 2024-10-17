@@ -47,8 +47,8 @@ Now that you've built the ETL pipeline for processing orders, Duff Beer Inc. als
 
 You can include, but are not limited to, the following models:
 
-Clients Model: A model that tracks information about Duff Beer Inc.'s clients (e.g., client_id, client_name, point_of_sale_channel, etc.).
-Products Model: A model that organizes data about the products Duff Beer Inc. sells (e.g., product_id, product_description, product_price, product_volume, etc.).
-Orders Model: A model that keeps records of orders (e.g., order_id, client_id, product_id, status, etc.).
-Feel free to extend or create additional models that you think would benefit Duff Beer Inc. in analyzing their sales and order data.
+- Clients Model: A model that tracks information about Duff Beer Inc.'s clients (e.g., client_id, client_name, point_of_sale_channel, etc.).
+- Products Model: A model that organizes data about the products Duff Beer Inc. sells (e.g., product_id, product_description, product_price, product_volume, etc.).
+- Orders Model: A model that keeps records of orders (e.g., order_id, client_id, product_id, status, etc.).
+- Feel free to extend or create additional models that you think would benefit Duff Beer Inc. in analyzing their sales and order data.
 
