@@ -56,35 +56,38 @@ The ETL process can be designed using:
 
 The ETL process should:
 
-Read the data from the CSV file.
-Perform necessary transformations, such as aggregating order information (e.g., calculating total sales per client).
-Save the transformed data in a separate S3 bucket for later querying.
-Data Storage & Querying:
+1.  Read the data from the CSV file.
+      Perform necessary transformations, such as aggregating order information (e.g., calculating total sales per client).
+      Save the transformed data in a separate S3 bucket for later querying.
+      Data Storage & Querying:
 
-After the ETL process, the transformed data should be saved in a queryable format (e.g., Parquet or CSV) in an S3 bucket.
-Set up AWS Athena to query this processed data, enabling the retrieval of meaningful insights such as:
-Total orders per client
-Total sales per product
-Status of orders (e.g., delivered, broken, created)
-Expose the Data via an API:
+2. After the ETL process, the transformed data should be saved in a queryable format in an S3 bucket.
 
-Create a REST API using API Gateway that allows users to query the processed data.
-The API should expose endpoints that can return specific reports based on the processed data, such as:
-Orders for a specific client
-Sales breakdown by product
-Order status reports
-Requirements & Best Practices:
+3. Set up AWS Athena to query this processed data, enabling the retrieval of meaningful insights such as:
+    Total orders per client
+    Total sales per product
+    Status of orders (e.g., delivered, broken, created)
+    Expose the Data via an API:
 
-The entire solution should follow a serverless architecture, ensuring scalability and minimal operational overhead.
-Implement proper error handling and logging to ensure robustness, especially in the Lambda functions and API Gateway.
-Write clean and modular code that is easy to understand and maintain.
-Bonus Points:
-Implement additional data validation, such as checking for malformed CSV rows or missing data.
-Optimize the pipeline to handle large datasets efficiently (e.g., by using batch processing or partitioning in Athena).
-Provide cost-optimization suggestions, ensuring minimal resource usage for maximum efficiency.
+4. Create a REST API using API Gateway that allows users to query the processed data.
+    The API should expose endpoints that can return specific reports based on the processed data, such as:
+    Orders for a specific client
+    Sales breakdown by product
+    Order status reports
+    Requirements & Best Practices:
+
+**Aditional Info**
+
+- The entire solution should follow a serverless architecture, ensuring scalability and minimal operational overhead.
+- Implement proper error handling and logging to ensure robustness, especially in the Lambda functions and API Gateway.
+- Write clean and modular code that is easy to understand and maintain.
+
+**Bonus Points:**
+- Implement additional data validation, such as checking for malformed CSV rows or missing data.
+- Optimize the pipeline to handle large datasets efficiently (e.g., by using batch processing or partitioning in Athena).
+- Provide cost-optimization suggestions, ensuring minimal resource usage for maximum efficiency.
 
 ### **Additional Task: Data Modeling:**
-
 
 Now that you've built the ETL pipeline for processing orders, Duff Beer Inc. also wants to improve their data structure for analytics. Based on the processed dataset, create as many models as you can. These models should help the company analyze their data efficiently.
 
@@ -93,5 +96,6 @@ You can include, but are not limited to, the following models:
 - Clients Model: A model that tracks information about Duff Beer Inc.'s clients (e.g., client_id, client_name, point_of_sale_channel, etc.).
 - Products Model: A model that organizes data about the products Duff Beer Inc. sells (e.g., product_id, product_description, product_price, product_volume, etc.).
 - Orders Model: A model that keeps records of orders (e.g., order_id, client_id, product_id, status, etc.).
-- Feel free to extend or create additional models that you think would benefit Duff Beer Inc. in analyzing their sales and order data.
+
+Feel free to extend or create additional models that you think would benefit Duff Beer Inc. in analyzing their sales and order data.
 
