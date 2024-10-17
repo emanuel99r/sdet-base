@@ -38,7 +38,16 @@ Here is a sample structure of the CSV file that Duff Beer Inc. will upload to S3
 ### **ETL Pipeline Challenge:**
 
 Using this CSV file, you should set up the automated ETL pipeline that processes this data.
-They will aggregate the orders, calculate total sales or product volumes, and expose this information via an API Gateway.
+
+Ideally, you should use S3 to save the CSV.
+
+Then, an event, somehow has to detect that the file is on s3 and needs to trigger the ETL process.
+
+The process itself can be with step functions, and one or multiple lambda functions, or Glue Jobs (Serverless is encouraged)
+
+then the data must be saved in another s3 bucket and be available to query from ATHENA.
+
+Finally the API should expose the data previously saved and processed.
 
 ### **Additional Task: Data Modeling:**
 
