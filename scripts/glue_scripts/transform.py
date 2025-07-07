@@ -41,9 +41,13 @@ sales_per_product_df = df.groupBy("product_id").agg(
 )
 status_counts_df = df.groupBy("status").count().withColumnRenamed("count", "total")
 
+def to_string_df(df):
+    return df.select([col(c).cast("string").alias(c) for c in df.columns])
+
 def save(dataframe, name):
     full_path = f"{output_base}{name}/"
-    dataframe.write \
+    dataframe_str = to_string_df(dataframe)
+    dataframe_str.write \
         .mode("overwrite") \
         .format("parquet") \
         .option("path", full_path) \
