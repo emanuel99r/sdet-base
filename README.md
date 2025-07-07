@@ -100,6 +100,7 @@ Ejemplo: https://{api_id}.execute-api.{region}.amazonaws.com/dev/clients?client_
 ## 🧪 Pruebas
 
 Sube archivos CSV al bucket `raw` para activar el flujo automáticamente.
+Archivos csv para testeo: https://drive.google.com/drive/folders/1ygIow0aCwVg5W7gNaO4iFgWNRdTSyubW?usp=sharing
 
 ## 📞 Soporte
 
