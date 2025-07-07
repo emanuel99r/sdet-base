@@ -63,7 +63,7 @@ Este proyecto implementa una arquitectura serverless de procesamiento de datos e
 ## 🚀 Endpoints API Gateway
 
 ```
-GET https://{api_id}.execute-api.{region}.amazonaws.com/dev/{modelo}
+GET https://{api_id}.execute-api.{region}.amazonaws.com/dev/{recurso}
 ```
 
 ### Endpoints disponibles:
