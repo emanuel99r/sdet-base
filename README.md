@@ -77,6 +77,8 @@ GET https://{api_id}.execute-api.{region}.amazonaws.com/dev/{modelo}
 | `/products`           | `product_id` (requeridos) | Consulta productos               |
 | `/sales_per_product`  | `product_id` (requeridos) | Ventas por producto              |
 
+Ejemplo: https://{api_id}.execute-api.{region}.amazonaws.com/dev/clients?client_id=1234
+
 ## ✅ Validaciones
 
 - Delimitadores válidos: `,`, `;`, `|`

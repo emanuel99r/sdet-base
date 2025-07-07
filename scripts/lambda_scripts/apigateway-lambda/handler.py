@@ -13,7 +13,7 @@ def lambda_handler(event, context):
     if path == '/clients':
         try:
             client_id = event.get("queryStringParameters").get("client_id")
-            query = f" SELECT * FROM clients where client_id = {client_id}"
+            query = f" SELECT * FROM clients where client_id = '{client_id}'"
         except:
             return {
                 "statusCode": 400,
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     elif path == '/orders':
         try:
             order_id = event.get("queryStringParameters").get("order_id")
-            query = f" SELECT * FROM orders where order_id = {order_id}"
+            query = f" SELECT * FROM orders where order_id = '{order_id}'"
         except:
             return {
                 "statusCode": 400,
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
     elif path == '/orders_per_client':
         try:
             client_id = event.get("queryStringParameters").get("client_id")
-            query = f" SELECT * FROM orders_per_client where client_id = {client_id}"
+            query = f" SELECT * FROM orders_per_client where client_id = '{client_id}'"
         except:
             return {
                 "statusCode": 400,
@@ -53,7 +53,7 @@ def lambda_handler(event, context):
     elif path == '/products':
         try:
             product_id = event.get("queryStringParameters").get("product_id")
-            query = f" SELECT * FROM products where product_id = {product_id}"
+            query = f" SELECT * FROM products where product_id = '{product_id}'"
         except:
             return {
                 "statusCode": 400,
@@ -63,7 +63,7 @@ def lambda_handler(event, context):
     elif path == '/sales_per_product':
         try:
             product_id = event.get("queryStringParameters").get("product_id")
-            query = f" SELECT * FROM sales_per_product where product_id = {product_id}"
+            query = f" SELECT * FROM sales_per_product where product_id = '{product_id}'"
         except:
             return {
                 "statusCode": 400,
